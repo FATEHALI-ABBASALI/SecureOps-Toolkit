@@ -7,12 +7,13 @@
   
  
 <table border="1" cellpadding="8" cellspacing="0" width="100%">
+  <tr>
+    <td><h1>1.Password Strength Analyzer </h1></td>
+  </tr>
   <tr> 
     <th colspan="2" style="text-align:center; font-size:18px;">How to Run the Password Strength Analyzer 🚀</th>
   </tr>
-  <tr>
-    <th><h1>1.Password Strength Analyzer </h1></th>
-  </tr>
+  
   <tr>
     <th>Prerequisites ✅</th>
     <td>
