@@ -346,3 +346,38 @@ python server.py
 
 </body>
 </html>
+
+
+
+<html>
+<head></head>
+<body>
+<h1>4.How to Run Tracker Blocker</h1>
+<ol>
+<li>Extract the <b>blocktrackers_mv3.zip</b> folder.</li>
+<li>Open <b>chrome://extensions/</b> in Google Chrome.</li>
+<li>Enable <b>Developer mode</b> using the toggle in the top-right corner.</li>
+<li>Click <b>Load unpacked</b> and select the extracted <b>blocktrackers_mv3</b> folder.</li>
+<li>The extension will load successfully.</li>
+<li>Visit websites listed below to test the extension. The badge number will increase for each blocked tracker.</li>
+</ol>
+
+<h2>Websites to Test</h2>
+<table border="1" cellpadding="6" cellspacing="0">
+<tr><th>Website</th><th>Why It Works</th></tr>
+<tr><td><a href="https://www.cnn.com" target="_blank">cnn.com</a></td><td>Contains Google Analytics and DoubleClick trackers.</td></tr>
+<tr><td><a href="https://www.nytimes.com" target="_blank">nytimes.com</a></td><td>Uses analytics and social media tracking scripts.</td></tr>
+<tr><td><a href="https://www.weather.com" target="_blank">weather.com</a></td><td>Loads Facebook and advertising trackers.</td></tr>
+<tr><td><a href="https://www.theguardian.com" target="_blank">theguardian.com</a></td><td>Contains scripts from ad networks and analytics tools.</td></tr>
+<tr><td><a href="https://www.bbc.com" target="_blank">bbc.com</a></td><td>Uses measurement and performance trackers.</td></tr>
+</table>
+
+<h2>How to Verify</h2>
+<ul>
+<li>Look at the extension icon in the toolbar — the badge number will increase when trackers are blocked.</li>
+<li>Open the popup to see the total number of blocked requests.</li>
+<li>Click “Reset Count” to clear the counter and test again on another site.</li>
+</ul>
+
+</body>
+</html>
