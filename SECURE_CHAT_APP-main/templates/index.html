@@ -1,0 +1,85 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Chat - {{ username }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <style>
+        body { margin: 0; display: flex; height: 100vh; font-family: sans-serif; }
+        #sidebar { width: 250px; background-color: #f8f8f8; border-right: 1px solid #eee; padding: 15px; display: flex; flex-direction: column; }
+        #sidebar h5 { margin-top: 0; color: #555; }
+        #online-users { list-style: none; padding: 0; flex-grow: 1; overflow-y: auto; }
+        #online-users li { padding: 8px 5px; cursor: pointer; border-bottom: 1px solid #eee; display: flex; align-items: center; }
+        #online-users li:hover { background-color: #eef; }
+        #online-users li.active { background-color: #dbeaff; font-weight: bold; }
+        #online-users li.self { background-color: #e0ffe0; color: #008000; font-weight: bold; }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+        .status-dot.online { background-color: #28a745; }
+        .status-dot.offline { background-color: #dc3545; }
+
+        #main-chat { flex-grow: 1; display: flex; flex-direction: column; }
+        #chat-header { padding: 15px; border-bottom: 1px solid #eee; background-color: #fff; display: flex; justify-content: space-between; align-items: center; }
+        #chat-header h4 { margin: 0; color: #333; }
+        #chat-header .logout-btn { background-color: #dc3545; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; font-size: 0.9em; }
+        #chat-header .logout-btn:hover { background-color: #c82333; }
+
+        #messages { flex-grow: 1; padding: 15px; overflow-y: auto; background-color: #fafafa; }
+        .message-row { margin-bottom: 10px; }
+        .message-meta { font-size: 0.8em; color: #888; margin-bottom: 3px; }
+        .message-content { background-color: #e1f5fe; padding: 10px 15px; border-radius: 15px; display: inline-block; max-width: 70%; word-wrap: break-word; }
+        .message-row.self .message-content { background-color: #dcedc8; float: right; }
+        .message-row.self { text-align: right; }
+        .message-row.system .message-content { background-color: #fff3cd; color: #856404; text-align: center; width: 100%; border-radius: 5px;}
+        .message-row.system .message-meta { text-align: center; width: 100%; }
+
+        #message-input-area { border-top: 1px solid #eee; padding: 15px; background-color: #fff; display: flex; }
+        #message-input-area input[type="text"] { flex-grow: 1; margin-right: 10px; border: 1px solid #ddd; padding: 10px; border-radius: 4px; }
+        #message-input-area button { background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
+        #message-input-area button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <aside id="sidebar">
+        <h5>Welcome, {{ username }}!</h5>
+        <p>Chatting as: <span id="current-user-display"></span></p>
+        <hr>
+        <h5>Online Users</h5>
+        <ul id="online-users">
+            <!-- Online users will be listed here -->
+        </ul>
+        <hr>
+        <a href="/logout" class="logout-btn button">Logout</a>
+    </aside>
+
+    <main id="main-chat">
+        <header id="chat-header">
+            <h4 id="recipient-name">Select a user to chat with</h4>
+        </header>
+        <section id="messages">
+            <!-- Messages will be displayed here -->
+        </section>
+        <footer id="message-input-area">
+            <input type="text" id="message-input" placeholder="Type your secure message..." disabled>
+            <button id="send-button" disabled>Send</button>
+        </footer>
+    </main>
+
+    <!-- Socket.IO client library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.min.js"></script>
+    <!-- jsencrypt for RSA operations -->
+    <script src="https://cdn.jsdelivr.net/npm/jsencrypt@3.3.1/bin/jsencrypt.min.js"></script>
+    <!-- crypto-js for AES operations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <!-- Our chat logic -->
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script>
+        // Pass username from Flask to JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            window.currentUsername = "{{ username }}";
+            document.getElementById('current-user-display').textContent = window.currentUsername;
+        });
+    </script>
+</body>
+</html>
