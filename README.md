@@ -1,11 +1,10 @@
 # SecureOps-Toolkit
-<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>How to Run - Password Strength Analyzer 🔐</title>
 </head>
 <body>
+  <h1>1.Password Strength Analyzer </h1>
 <table border="1" cellpadding="8" cellspacing="0" width="100%">
   <tr>
     <th colspan="2" style="text-align:center; font-size:18px;">How to Run the Password Strength Analyzer 🚀</th>
