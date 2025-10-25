@@ -216,3 +216,133 @@ python server.py
 
 </body>
 </html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+<h1>3.Web_Application_Vulnerability_Scanner</h1>
+<table border="1" cellpadding="12" cellspacing="0" width="900" align="center">
+  <tr>
+    <td colspan="2" align="center" bgcolor="#FFF2CC" style="font-size:18px;">
+      🔥 <strong>Flask Scanner — Simple Step-by-step</strong> 🔥
+    </td>
+  </tr>
+
+  <tr>
+    <td width="90" align="center" bgcolor="#F8EADF"><strong>1️⃣ 🖥️</strong></td>
+    <td>
+      <strong>Create project folder</strong><br>
+      . PowerShell command: <code>mkdir C:\projects\flask-scanner</code> then <code>cd C:\projects\flask-scanner</code><br>
+      . Tip: open PowerShell as Administrator (right-click → Run as administrator)
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#F8EADF"><strong>2️⃣ 📝</strong></td>
+    <td>
+      <strong>Create project files & folders</strong><br>
+      . Save these files in project root: <code>core.py</code> , <code>app.py</code><br>
+      . Create folder <code>templates</code> and save: <code>index.html</code> , <code>report.html</code> , <code>vulnerable_index.html</code> , <code>vulnerable_login.html</code><br>
+      . Create folder <code>static</code> and inside it <code>reports</code> (or let app create it)
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#F8EADF"><strong>3️⃣ 🐍</strong></td>
+    <td>
+      <strong>Create & activate Python virtual environment</strong><br>
+      . Create venv: <code>python -m venv venv</code><br>
+      . Activate (PowerShell): <code>.\venv\Scripts\Activate.ps1</code><br>
+      . After activation your prompt shows <code>(venv)</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#F8EADF"><strong>4️⃣ 📦</strong></td>
+    <td>
+      <strong>Install required packages</strong><br>
+      . Command: <code>pip install Flask requests beautifulsoup4 lxml</code><br>
+      . Tip: if installs fail, ensure venv is active and you have internet access
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#F8EADF"><strong>5️⃣ ▶️</strong></td>
+    <td>
+      <strong>Run the Flask app</strong><br>
+      . Command: <code>python app.py</code><br>
+      . Expected message: <em>Running on http://127.0.0.1:5000/</em>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#F8EADF"><strong>6️⃣ 🌐</strong></td>
+    <td>
+      <strong>Open in browser</strong><br>
+      . Main UI: <code>http://127.0.0.1:5000/</code><br>
+      . Vulnerable example target: <code>http://127.0.0.1:5000/vulnerable-app/</code> (or check the route used in your app)
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#F8EADF"><strong>7️⃣ 🔍</strong></td>
+    <td>
+      <strong>Use the scanner UI</strong><br>
+      . In web page enter target URL (e.g. <code>http://127.0.0.1:5000/vulnerable-app/</code>) and click <em>Scan</em><br>
+      . After scan, open the generated report in <code>static/reports/</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#F8EADF"><strong>8️⃣ 🖼️</strong></td>
+    <td>
+      <strong>Screenshots & reports</strong><br>
+      . Save screenshots of: app UI, scan running, and saved report HTML from <code>static/reports/</code><br>
+      . Create folder <code>screenshots</code> and copy images there
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#F8EADF"><strong>9️⃣ 🔁</strong></td>
+    <td>
+      <strong>Stop the server</strong><br>
+      . In PowerShell press <code>Ctrl + C</code> to stop the running Flask server
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#F8EADF"><strong>🔟 ⚠️</strong></td>
+    <td>
+      <strong>Troubleshooting</strong><br>
+      . If <code>python</code> not found → install Python and enable <em>Add to PATH</em> during install<br>
+      . If port 5000 busy → run on another port: <code>python app.py</code> after editing <code>app.run(port=5001)</code> in <code>app.py</code> or use <code>flask run --port 5001</code><br>
+      . If packages fail → ensure venv active then <code>pip install</code> again
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#F8EADF"><strong>✅ 📂</strong></td>
+    <td>
+      <strong>Recommended final repository structure</strong><br>
+      . app.py<br>
+      . core.py<br>
+      . templates/index.html<br>
+      . templates/report.html<br>
+      . templates/vulnerable_index.html<br>
+      . templates/vulnerable_login.html<br>
+      . static/reports/<br>
+      . screenshots/
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" align="center" bgcolor="#E8F8F5">
+      📌 <strong>Notes</strong>: This is a visual guide. Run the exact commands in PowerShell. If you want, I can now generate minimal example HTML content for the files inside <code>templates/</code> so you can paste them directly.
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
